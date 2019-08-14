@@ -5,5 +5,7 @@ export interface IDay {
     astro: IAstro;
     date: string;
     date_epoch: number;
-    day: IWeather
+    day: IWeather;
+    location_id?: string;
+    id?: string;
 }
