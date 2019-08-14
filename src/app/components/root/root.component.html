@@ -1,3 +1,4 @@
 <h1>Weather App</h1>
 <hr>
 <app-search-form (onSubmit)="requestForecast($event)"></app-search-form>
+<app-forecast-day *ngFor="let day of (forecast$ | async)" [day]="day"></app-forecast-day>

@@ -11,6 +11,7 @@ import { ForecastService } from './services/forecast.service';
 import { SharedModule } from './modules/shared/shared.module';
 import { ForecastDayComponent } from './components/forecast-day/forecast-day.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
+import { SearchEffects } from './store/effects/search.effects';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
     SharedModule,
     BrowserModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([AppEffects]),
+    EffectsModule.forRoot([AppEffects, SearchEffects]),
     environment.production ? [] : StoreDevtoolsModule.instrument()
   ],
   providers: [

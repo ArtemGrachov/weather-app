@@ -1,0 +1,14 @@
+import { Action } from '@ngrx/store';
+
+export enum ESearchActions {
+    SET_LOCATION = '[Search] Set location'
+}
+
+export class SetLocation implements Action {
+    public type: ESearchActions = ESearchActions.SET_LOCATION;
+
+    constructor(public payload: { location: string }) { }
+}
+
+export type SearchAction =
+    SetLocation;

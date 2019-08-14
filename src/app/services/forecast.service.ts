@@ -12,6 +12,7 @@ export class ForecastService {
         let params: HttpParams = new HttpParams();
         params = params.append('key', environment.apiKey);
         params = params.append('q', query);
+        params = params.append('days', '7');
 
         return this.http.get<IRes>(`https://api.apixu.com/v1/forecast.json`, { params });
     }
