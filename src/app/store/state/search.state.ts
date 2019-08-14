@@ -1,6 +1,8 @@
+import { ILocation } from 'src/app/models/location.interface';
+
 export interface ISearchState {
     loading: boolean;
-    location: string;
+    location: ILocation;
 }
 
 export const initialSearchState: ISearchState = {

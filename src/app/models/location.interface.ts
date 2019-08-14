@@ -1,10 +1,9 @@
 export interface ILocation {
     country: string;
+    id: number;
     lat: number;
-    localtime: string;
-    localtime_epoch: number;
     lon: number;
     name: string;
     region: string;
-    tz_id: string;
+    url: string;
 }

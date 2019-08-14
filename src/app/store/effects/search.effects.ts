@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { IAppState } from '../state/app.state';
 import { selectByLocation } from '../selectors/forecast.selectors';
 import { IDay } from 'src/app/models/day.interface';
-import { GetForecast } from '../actions/app.actions';
+import { GetForecast } from '../actions/forecast.actions';
 
 @Injectable()
 export class SearchEffects {
@@ -23,7 +23,7 @@ export class SearchEffects {
                 .pipe(
                     take(1),
                     filter((forecast: IDay[]) => forecast.length === 0),
-                    mapTo(new GetForecast(action.payload))
+                    mapTo(new GetForecast({ location: action.payload.location.name }))
                 )
         ),
     )

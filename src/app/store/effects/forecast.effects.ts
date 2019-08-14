@@ -2,18 +2,18 @@ import { Injectable } from '@angular/core';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { ForecastService } from 'src/app/services/forecast.service';
 import {
-    EAppActions,
+    EForecastActions,
     GetForecast,
     GetForecastSuccess,
     GetForecastError
-} from '../actions/app.actions';
+} from '../actions/forecast.actions';
 import { switchMap, map, catchError } from 'rxjs/operators';
 import { IRes } from 'src/app/models/res.interface';
 import { of } from 'rxjs';
 import { IError } from 'src/app/models/error.interface';
 
 @Injectable()
-export class AppEffects {
+export class ForecastEffects {
     constructor(
         private actions$: Actions,
         private forecastService: ForecastService
@@ -21,7 +21,7 @@ export class AppEffects {
 
     @Effect()
     public getForecast$ = this.actions$.pipe(
-        ofType(EAppActions.GET_FORECAST),
+        ofType(EForecastActions.GET_FORECAST),
         switchMap(
             (action: GetForecast) =>
                 this.forecastService.getForecast(action.payload.location)

@@ -6,6 +6,7 @@ export interface IDay {
     date: string;
     date_epoch: number;
     day: IWeather;
-    location_id?: string;
+    lat?: number;
+    lon?: number;
     id?: string;
 }

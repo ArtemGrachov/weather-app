@@ -1,7 +1,8 @@
 import { ISearchState, initialSearchState } from '../state/search.state';
 import { Action } from '@ngrx/store';
-import { EAppActions } from '../actions/app.actions';
 import { ESearchActions, SetLocation } from '../actions/search.actions';
+import { EForecastActions } from '../actions/forecast.actions';
+import { ELocationsActions } from '../actions/locations.actions';
 
 export const searchReducers = (
     state: ISearchState = initialSearchState,
@@ -14,14 +15,17 @@ export const searchReducers = (
                 location: (action as SetLocation).payload.location
             }
         }
-        case EAppActions.GET_FORECAST: {
+        case ELocationsActions.LOCATIONS_SEARCH:
+        case EForecastActions.GET_FORECAST: {
             return {
                 ...state,
                 loading: true
             }
         }
-        case EAppActions.GET_FORECAST_SUCCESS:
-        case EAppActions.GET_FORECAST_ERROR: {
+        case ELocationsActions.LOCATIONS_SEARCH_SUCCESS:
+        case ELocationsActions.LOCATIONS_SEARCH_ERROR: 
+        case EForecastActions.GET_FORECAST_SUCCESS:
+        case EForecastActions.GET_FORECAST_ERROR: {
             return {
                 ...state,
                 loading: false,

@@ -1,4 +1,9 @@
 <h1>Weather App</h1>
 <hr>
-<app-search-form (onSubmit)="requestForecast($event)"></app-search-form>
+<app-search-form (onSubmit)="searchLocations($event)"></app-search-form>
+<ul>
+    <li *ngFor="let location of (locations$ | async)">
+        <button (click)="setLocation(location)">{{ location | json }}</button>
+    </li>
+</ul>
 <app-forecast-day *ngFor="let day of (forecast$ | async)" [day]="day"></app-forecast-day>
