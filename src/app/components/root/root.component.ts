@@ -7,7 +7,7 @@ import { IDay } from 'src/app/models/day.interface';
 import { selectLocation } from 'src/app/store/selectors/search.selectors';
 import { switchMap, tap } from 'rxjs/operators';
 import { selectByLocation } from 'src/app/store/selectors/forecast.selectors';
-import { LocationsSearch } from 'src/app/store/actions/locations.actions';
+import { LocationsSearch, LocationRemove } from 'src/app/store/actions/locations.actions';
 import { selectAllLocations } from 'src/app/store/selectors/locations.selectors';
 import { ILocation } from 'src/app/models/location.interface';
 
@@ -30,6 +30,10 @@ export class RootComponent {
     public setLocation(location: ILocation): void {
         this.store.dispatch(new SetLocation({ location }));
         this.showLocations = false;
+    }
+
+    public removeLocation(location: ILocation): void {
+        this.store.dispatch(new LocationRemove({ location }));
     }
 
     public forecast$: Observable<IDay[]> = this.store.select(selectLocation)

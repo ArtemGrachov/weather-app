@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
 import { ILocation } from 'src/app/models/location.interface';
 
 @Component({
@@ -8,6 +8,12 @@ import { ILocation } from 'src/app/models/location.interface';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LocationComponent {
+    @Output()
+    private selectEvent: EventEmitter<ILocation> = new EventEmitter();
+
+    @Output()
+    private removeEvent: EventEmitter<ILocation> = new EventEmitter();
+
     @Input()
     public location: ILocation;
 
@@ -21,5 +27,13 @@ export class LocationComponent {
         } else {
             this.locationName = this.location.name;
         }
+    }
+
+    public select(): void {
+        this.selectEvent.next(this.location);
+    }
+
+    public remove(): void {
+        this.removeEvent.next(this.location);
     }
 }

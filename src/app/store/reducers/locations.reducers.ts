@@ -1,6 +1,6 @@
 import { ILocationsState, initialLocationsState, adapter } from '../state/locations.state';
 import { Action } from '@ngrx/store';
-import { ELocationsActions, LocationsSearchSuccess } from '../actions/locations.actions';
+import { ELocationsActions, LocationsSearchSuccess, LocationRemove } from '../actions/locations.actions';
 
 export const locationsReducers = (
     state: ILocationsState = initialLocationsState,
@@ -10,6 +10,12 @@ export const locationsReducers = (
         case ELocationsActions.LOCATIONS_SEARCH_SUCCESS: {
             return adapter.upsertMany(
                 (action as LocationsSearchSuccess).payload.locations,
+                state
+            );
+        }
+        case ELocationsActions.LOCATION_REMOVE: {
+            return adapter.removeOne(
+                (action as LocationRemove).payload.location.id,
                 state
             );
         }

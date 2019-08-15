@@ -1,9 +1,16 @@
-<div class="title">
-    {{ locationName }}
+<div class="wrap" (click)="select()">
+    <div class="title">
+        {{ locationName }}
+    </div>
+    <div class="region">
+        {{ location.region }}
+    </div>
+    <div class="country">
+        {{ location.country }}
+    </div>
 </div>
-<div class="region">
-    {{ location.region }}
-</div>
-<div class="country">
-    {{ location.country }}
-</div>
+<button class="remove-button" (click)="remove()">
+    <i class="material-icons">
+        delete_forever
+    </i>
+</button>

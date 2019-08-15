@@ -30,8 +30,11 @@
 .temperature {
     &-average {
         font-size: $textLarge;
-        font-weight: bold;
         line-height: 1;
+
+        &-number {
+            font-weight: bold;
+        }
     }
 
     &-min-max {

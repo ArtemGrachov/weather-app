@@ -7,10 +7,16 @@
         <div class="show-locations">
             <button
                 class="show-locations-button mb-3"
-                (click)="showLocations = !showLocations"
                 *ngIf="(locations$ | async).length"
+                (click)="showLocations = !showLocations"
+                [ngClass]="{ 'locations-hidden': showLocations }"
             >
-                {{ showLocations ? 'Hide' : 'Show' }} locations
+                <div class="show-locations-label">
+                    {{ showLocations ? 'Hide' : 'Show' }} locations
+                </div>
+                <i class="material-icons show-locations-icon">
+                    arrow_forward_ios
+                </i>
             </button>
         </div>
         <div class="row" *ngIf="showLocations">
@@ -20,7 +26,8 @@
             >
                 <app-location
                     class="location"
-                    (click)="setLocation(location)"
+                    (selectEvent)="setLocation($event)"
+                    (removeEvent)="removeLocation($event)"
                     [location]="location"
                 ></app-location>
             </div>

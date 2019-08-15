@@ -37,5 +37,20 @@
         &:active {
             box-shadow: none;
         }
+
+        &.locations-hidden {
+            .show-locations {
+                &-icon {
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+    }
+
+    &-icon {
+        font-size: 30px;
+        transform: rotate(90deg);
+        opacity: .5;
+        transition: $transition;
     }
 }

@@ -4,7 +4,7 @@ import { ILocation } from 'src/app/models/location.interface';
 export interface ILocationsState extends EntityState<ILocation> { }
 
 export const adapter: EntityAdapter<ILocation> = createEntityAdapter<ILocation>({
-    selectId: (location: ILocation) => location.name,
+    selectId: (location: ILocation) => location.id,
     sortComparer: false
 });
 

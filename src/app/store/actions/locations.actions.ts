@@ -6,6 +6,7 @@ export enum ELocationsActions {
     LOCATIONS_SEARCH = '[Locations] Search locations',
     LOCATIONS_SEARCH_SUCCESS = '[Locations] Search locations success',
     LOCATIONS_SEARCH_ERROR = '[Locations] Search locations error',
+    LOCATION_REMOVE = '[Locations] Remove location'
 }
 
 export class LocationsSearch implements Action {
@@ -26,7 +27,14 @@ export class LocationsSearchError implements Action {
     constructor(public payload: IError) { }
 }
 
+export class LocationRemove implements Action {
+    public type: ELocationsActions = ELocationsActions.LOCATION_REMOVE;
+
+    constructor(public payload: { location: ILocation }) { }
+}
+
 export type LocationsAction =
     LocationsSearch |
     LocationsSearchSuccess |
-    LocationsSearchError;
+    LocationsSearchError |
+    LocationRemove;

@@ -3,12 +3,19 @@
 :host {
     display: block;
     color: white;
-    padding: $padding;
     transition: $transition;
+    position: relative;
+    display: flex;
+    align-content: stretch;
+    justify-content: stretch;
 
     &:hover {
         box-shadow: $shadow;
     }
+}
+
+.wrap {
+    padding: $padding;
 }
 
 .title {
@@ -24,4 +31,27 @@
 .country {
     font-size: $textSmall;
     opacity: .5;
+}
+
+.remove-button {
+    $size: 30px;
+    position: absolute;
+    top: -($size * .3);
+    right: -($size * .3);
+    padding: 5px;
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+    line-height: $size;
+    opacity: .05;
+
+    .material-icons {
+        font-size: 20px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        opacity: 1;
+    }
 }
