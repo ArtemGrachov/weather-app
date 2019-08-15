@@ -2,10 +2,10 @@ import { ILocationsState, initialLocationsState, adapter } from '../state/locati
 import { Action } from '@ngrx/store';
 import { ELocationsActions, LocationsSearchSuccess, LocationRemove } from '../actions/locations.actions';
 
-export const locationsReducers = (
+export function locationsReducers(
     state: ILocationsState = initialLocationsState,
     action: Action
-) => {
+): ILocationsState {
     switch (action.type) {
         case ELocationsActions.LOCATIONS_SEARCH_SUCCESS: {
             return adapter.upsertMany(

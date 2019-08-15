@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "weather-angular": {
+    "weather-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -36,7 +36,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/weather-angular",
+            "outputPath": "dist/weather-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -86,21 +86,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "weather-angular:build"
+            "browserTarget": "weather-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "weather-angular:build:production"
+              "browserTarget": "weather-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "weather-angular:build"
+            "browserTarget": "weather-app:build"
           }
         }
       }
     }},
-  "defaultProject": "weather-angular"
+  "defaultProject": "weather-app"
 }

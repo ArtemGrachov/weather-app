@@ -4,10 +4,10 @@ import { ESearchActions, SetLocation } from '../actions/search.actions';
 import { EForecastActions } from '../actions/forecast.actions';
 import { ELocationsActions } from '../actions/locations.actions';
 
-export const searchReducers = (
+export function searchReducers(
     state: ISearchState = initialSearchState,
     action: Action
-): ISearchState => {
+): ISearchState {
     switch (action.type) {
         case ESearchActions.SET_LOCATION: {
             return {

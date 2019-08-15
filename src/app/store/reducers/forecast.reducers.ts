@@ -5,10 +5,10 @@ import { IDay } from 'src/app/models/day.interface';
 import { Action } from '@ngrx/store';
 import { EForecastActions, GetForecastSuccess } from '../actions/forecast.actions';
 
-export const forecastReducers = (
+export function forecastReducers(
     state: IForecastState = initialForecastState,
     action: Action
-) => {
+): IForecastState {
     switch (action.type) {
         case EForecastActions.GET_FORECAST_SUCCESS: {
             const payload: IRes = (action as GetForecastSuccess).payload;

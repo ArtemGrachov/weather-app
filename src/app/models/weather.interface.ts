@@ -4,8 +4,8 @@ export interface IWeather {
     avghumidity: number;
     avgtemp_c: number;
     avgtemp_f: number;
-    avgis_km: number;
-    avgis_miles: number;
+    avgvis_km: number;
+    avgvis_miles: number;
     maxtemp_c: number;
     maxtemp_f: number;
     maxwind_kph: number;
