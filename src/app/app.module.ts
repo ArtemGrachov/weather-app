@@ -14,12 +14,14 @@ import { SearchEffects } from './store/effects/search.effects';
 import { LocationsService } from './services/locations.service';
 import { ForecastEffects } from './store/effects/forecast.effects';
 import { LocationsEffects } from './store/effects/locations.effects';
+import { LocationComponent } from './components/location/location.component';
 
 @NgModule({
   declarations: [
     RootComponent,
     ForecastDayComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    LocationComponent
   ],
   imports: [
     SharedModule,

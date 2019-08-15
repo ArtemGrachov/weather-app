@@ -1,0 +1,27 @@
+@import '../../../styles/variables.scss';
+
+:host {
+    display: block;
+    color: white;
+    padding: $padding;
+    transition: $transition;
+
+    &:hover {
+        box-shadow: $shadow;
+    }
+}
+
+.title {
+    font-size: $textNormal;
+    font-weight: bold;
+}
+
+.region {
+    font-size: $textSmall;
+    opacity: .75;
+}
+
+.country {
+    font-size: $textSmall;
+    opacity: .5;
+}

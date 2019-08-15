@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/normalize.css/normalize.css';
+@import '../node_modules/bootstrap-4-grid/scss/grid.scss';
+@import './styles/variables.scss';
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: #395984;
+    font-size: $textNormal;
+    color: white;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
+    color: rgba(white, .5);
+    font-size: $textSmall;
+    text-align: center;
+    padding: $padding;
+}
+
+.text-transparent {
+    color: rgba(white, .5);
+}

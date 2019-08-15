@@ -1,0 +1,34 @@
+@import '../../../styles/variables.scss';
+
+:host {
+    display: block;
+}
+
+.form {
+    display: flex;
+    align-items: stretch;
+    box-shadow: $shadow;
+    border-radius: $borderRadius;
+}
+
+.search-input {
+    display: block;
+    width: 100%;
+    padding: $padding;
+    background: none;
+    font-size: $textNormal;
+    border: none;
+    border-radius: $borderRadius 0 0 $borderRadius;
+    color: white;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.search-button {
+    color: white;
+    background: none;
+    border: none;
+    padding: $padding;
+    border-radius: 0 $borderRadius $borderRadius 0;
+}

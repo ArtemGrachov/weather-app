@@ -1,8 +1,10 @@
+import { ICondition } from './condition.interface';
+
 export interface IWeather {
     avghumidity: number;
     avgtemp_c: number;
     avgtemp_f: number;
-    avgis_mk: number;
+    avgis_km: number;
     avgis_miles: number;
     maxtemp_c: number;
     maxtemp_f: number;
@@ -13,4 +15,5 @@ export interface IWeather {
     totalprecip_in: number;
     totalprecip_mm: number;
     uv: number;
+    condition: ICondition;
 }

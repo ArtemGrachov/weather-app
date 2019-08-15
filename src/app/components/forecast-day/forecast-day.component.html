@@ -1,1 +1,51 @@
-{{ day | json }}
+<div class="date mb-3">
+    <div class="date-label text-transparent">
+        {{ formattedDate }}
+    </div>
+    <div class="day-of-week">
+        {{ dayOfWeek }}
+    </div>
+</div>
+<div class="row align-items-center mb-3">
+    <div class="col-12 col-sm-3 col-md-2 mb-3 mb-sm-5 mb-sm-0">
+        <div class="condition">
+            <img [src]="'https:' + day.day.condition.icon" alt="" class="condition-icon">
+            <div class="conditon-label">
+                {{ day.day.condition.text }}
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-9 col-md-10">
+        <div class="temperature d-sm-flex align-items-center">
+            <div class="temperature-average mr-3 mb-sm-3">
+                {{ day.day.avgtemp_c }}<span class="text-transparent">°C</span>
+            </div>
+            <div class="temperature-min-max">
+                <div class="temperature-max">
+                    <span class="text-transparent">Max:</span>
+                    {{ day.day.maxtemp_c }}<span class="text-transparent">°C</span>
+                </div>
+                <div class="temperature-min">
+                    <span class="text-transparent">Min:</span>
+                    {{ day.day.mintemp_c }}<span class="text-transparent">°C</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="other">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-lg-3 mb-2">
+            Humidity: {{ day.day.avghumidity }}<span class="text-transparent">%</span>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-2">
+            Average visibility: {{ day.day.avgvis_km }}<span class="text-transparent">km</span>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-2">
+            Maximum wind speed: {{ day.day.maxwind_kph }}<span class="text-transparent">km</span>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 mb-2">
+            Total precipitation: {{ day.day.totalprecip_mm }}<span class="text-transparent">mm</span>
+        </div>
+    </div>
+</div>

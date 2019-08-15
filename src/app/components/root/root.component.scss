@@ -1,0 +1,22 @@
+@import '../../../../node_modules/bootstrap-4-grid/scss/grid.scss';
+
+:host {
+    padding: 20px 0;
+}
+
+.location {
+    cursor: pointer;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: normal;
+
+    @include media-breakpoint-up(md) { 
+        font-size: 24px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 32px;
+    }
+}

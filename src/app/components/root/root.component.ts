@@ -14,6 +14,7 @@ import { ILocation } from 'src/app/models/location.interface';
 @Component({
     selector: 'app-root',
     templateUrl: 'root.component.html',
+    styleUrls: ['root.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RootComponent {
@@ -28,11 +29,9 @@ export class RootComponent {
     }
 
     public forecast$: Observable<IDay[]> = this.store.select(selectLocation)
-        .pipe(
-            tap(r => console.log(r)),
-            switchMap((location: ILocation) => this.store.select(selectByLocation, { location })),
-            tap(r => console.log(r))
-        )
+        .pipe(switchMap((location: ILocation) => this.store.select(selectByLocation, { location })))
 
     public locations$: Observable<ILocation[]> = this.store.select(selectAllLocations);
+
+    public currentLocation$: Observable<ILocation> = this.store.select(selectLocation);
 }
