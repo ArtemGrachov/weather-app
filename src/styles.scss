@@ -6,6 +6,13 @@
 *:before,
 *:after {
     box-sizing: border-box;
+    outline: none;
+
+    &:focus,
+    &:hover,
+    &:active {
+        outline: none;
+    }
 }
 
 html,
@@ -18,6 +25,21 @@ body {
     background: #395984;
     font-size: $textNormal;
     color: white;
+}
+
+a {
+    font-weight: bold;
+    color: white;
+    opacity: .75;
+    transition: $transition;
+    text-decoration-style: dotted;
+
+    &:hover,
+    &:focus,
+    &:active {
+        opacity: 1;
+        text-decoration: none;
+    }
 }
 
 .wrapper {
@@ -36,4 +58,48 @@ body {
 
 .text-transparent {
     color: rgba(white, .5);
+}
+
+button {
+    color: white;
+    background: none;
+    border: none;
+    padding: $padding;
+    border-radius: $borderRadius;
+    font-size: $textNormal;
+    transition: $transition;
+    box-shadow: $shadow;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: rgba(white, .75);
+        box-shadow: $shadowActive;
+    }
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: $padding;
+    background: none;
+    font-size: $textNormal;
+    border: none;
+    border-radius: $borderRadius;
+    color: rgba(white, .75);
+    transition: $transition;
+    box-shadow: $shadow;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: white;
+    }
+
+    &:focus,
+    &:active {
+        box-shadow: $shadowActive;
+    }
 }

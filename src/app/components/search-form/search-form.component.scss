@@ -11,24 +11,16 @@
     border-radius: $borderRadius;
 }
 
-.search-input {
-    display: block;
-    width: 100%;
-    padding: $padding;
-    background: none;
-    font-size: $textNormal;
-    border: none;
-    border-radius: $borderRadius 0 0 $borderRadius;
-    color: white;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: auto;
-}
+.search {
+    &-input {
+        flex: 1 1 auto;
+        box-shadow: none;
+        border-radius: $borderRadius 0 0 $borderRadius;
+    }
 
-.search-button {
-    color: white;
-    background: none;
-    border: none;
-    padding: $padding;
-    border-radius: 0 $borderRadius $borderRadius 0;
+    &-submit {
+        flex: 0 0 auto;
+        box-shadow: none;
+        border-radius: 0 $borderRadius $borderRadius 0;
+    }
 }

@@ -20,12 +20,16 @@ import { ILocation } from 'src/app/models/location.interface';
 export class RootComponent {
     constructor(private store: Store<IAppState>) { }
 
+    public showLocations: boolean = true;
+
     public searchLocations(query: string): void {
         this.store.dispatch(new LocationsSearch({ query }));
+        this.showLocations = true;
     }
 
     public setLocation(location: ILocation): void {
         this.store.dispatch(new SetLocation({ location }));
+        this.showLocations = false;
     }
 
     public forecast$: Observable<IDay[]> = this.store.select(selectLocation)
