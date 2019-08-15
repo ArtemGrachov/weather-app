@@ -103,4 +103,8 @@ textarea {
     &:active {
         box-shadow: $shadowActive;
     }
+
+    &::placeholder {
+        color: rgba(white, .2);
+    }
 }
